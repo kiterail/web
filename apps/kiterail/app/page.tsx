@@ -42,18 +42,15 @@ export default function Home() {
           </h2>
           <div className="mt-10 space-y-6 text-[var(--color-text-secondary)] leading-relaxed">
             <p>
-              Kite &amp; Rail is the studio of Amy Turrin, a technical platform
-              leader with 15+ years building digital experiences at scale. By
-              day, I lead engineering teams and platform strategy at the
-              enterprise level. Here, I build the things I want to exist.
+              Kite &amp; Rail is my studio. I&apos;m Amy Turrin, a technical
+              platform leader with 15+ years building digital experiences at
+              scale. This is where I build the things I want to exist.
             </p>
             <p>
-              The name is a nod to Margaret Atwood&apos;s MaddAddam trilogy,
-              where creatures are named in pairs. A kite and a rail are two
-              birds with very different dispositions, and that felt right for a
-              studio that moves between big ambitions and quiet, careful craft.
+              The name comes from two birds with very different dispositions — a
+              small nod to <span className="text-brand-300">Atwood</span>.
+              We&apos;re just getting started.
             </p>
-            <p>Right now we&apos;re building the foundation. More to come.</p>
           </div>
         </Container>
       </Section>
@@ -73,10 +70,10 @@ export default function Home() {
       <Section>
         <Container size="sm">
           <p className="text-[13px] uppercase tracking-[0.16em] text-brand-400">
-            What we do
+            What we&apos;re building
           </p>
           <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Build, ship, evolve.
+            Making things that matter.
           </h2>
           <div className="mt-14 space-y-12">
             {services.map((service) => (
@@ -181,7 +178,7 @@ const services = [
   {
     title: "Websites & Platforms",
     description:
-      "Modern web experiences built with React, Next.js, and TypeScript. From brochure sites to complex multi-brand ecosystems.",
+      "Modern web experiences from simple to complex. We pick the right tools for the job and build things that last.",
   },
   {
     title: "Creative Projects",
@@ -189,13 +186,8 @@ const services = [
       "Games, interactive tools, and community platforms. The things that are fun to make and worth using.",
   },
   {
-    title: "Platform & Architecture Consulting",
+    title: "Consulting",
     description:
-      "CMS strategy, cloud migration, platform modernization, and engineering governance for teams navigating complexity at scale.",
-  },
-  {
-    title: "Compliance & Accessibility",
-    description:
-      "GDPR, CCPA, COPPA, and WCAG expertise baked in from the start, not bolted on at the end.",
+      "Platform strategy, architecture, and engineering leadership for teams navigating complexity at scale.",
   },
 ];

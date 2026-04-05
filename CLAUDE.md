@@ -53,6 +53,13 @@ Use `/scaffold-site <name>` to generate a new site with all boilerplate.
 - No Claude-related text, references, or metadata should appear in rendered HTML, page content, or build artifacts
 - `.claude/`, `CLAUDE.md`, and `.mcp.json` live at the repo root and are not imported by any app — keep it that way
 
+## Content Editing
+
+- **Always propose content changes before applying them.** If the user hasn't provided exact wording, draft the new text in chat and wait for approval before editing files.
+- This applies to headings, body copy, metadata descriptions, and any user-facing text.
+- Structural or code-only changes (layout, styling, components) can proceed without text review.
+- See `.claude/rules/voice.md` for writing tone and style guidelines.
+
 ## Commit Rules
 
 - Do NOT include `Co-Authored-By` lines in commit messages

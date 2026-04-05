@@ -94,5 +94,5 @@ Tell the user:
 
 - Always use `@kiterail/ui` components (Button, Container, Section, Card) — do not duplicate them locally
 - Each site gets its own brand color palette via CSS custom properties
-- Keep the `globals.css` import order: `@import "tailwindcss"` first, then `@import "@kiterail/ui/globals.css"`
+- In `globals.css`, use `@import "tailwindcss" theme(static);` with `@theme static {}` for brand colors, and add `@source "../../../packages/ui/src";` so Tailwind generates utilities for shared components
 - The home page should be a reasonable starting point for the site's purpose, not just a copy of kiterail

@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Container } from "@kiterail/ui";
+import { Container } from "@kiterail/ui";
 
 const navLinks = [
-  { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -13,43 +12,38 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
+    <header className="fixed top-0 z-50 w-full bg-[var(--color-surface)]/80 backdrop-blur-xl">
+      <Container size="xl" className="flex h-20 items-center justify-between">
         <a
           href="/"
-          className="font-[family-name:var(--font-heading)] text-xl font-bold text-brand-700"
+          className="font-[family-name:var(--font-heading)] text-lg tracking-wide text-[var(--color-text-primary)]"
         >
           Kite <span className="text-brand-400">&amp;</span> Rail
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700"
+              className="text-[13px] uppercase tracking-[0.12em] text-[var(--color-text-muted)] transition-colors duration-300 hover:text-[var(--color-text-primary)]"
             >
               {link.label}
             </a>
           ))}
-          <Button size="sm">
-            <a href="#contact">Start a Project</a>
-          </Button>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           <svg
-            className="h-6 w-6 text-gray-700"
+            className="h-5 w-5 text-[var(--color-text-muted)]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={1.5}
           >
             {mobileOpen ? (
               <path
@@ -68,23 +62,19 @@ export function Header() {
         </button>
       </Container>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-gray-100 bg-white md:hidden">
-          <Container className="flex flex-col gap-4 py-4">
+        <div className="border-t border-[var(--color-surface-border)] bg-[var(--color-surface)] md:hidden">
+          <Container className="flex flex-col gap-5 py-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-600"
+                className="text-[13px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="w-full">
-              <a href="#contact">Start a Project</a>
-            </Button>
           </Container>
         </div>
       )}

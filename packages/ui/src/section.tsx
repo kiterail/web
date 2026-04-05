@@ -9,5 +9,5 @@ export function Section({
   className = "",
   ...props
 }: SectionProps) {
-  return <Tag className={`py-16 sm:py-24 ${className}`} {...props} />;
+  return <Tag className={`py-20 sm:py-32 ${className}`} {...props} />;
 }

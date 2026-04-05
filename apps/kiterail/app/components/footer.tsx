@@ -2,14 +2,13 @@ import { Container } from "@kiterail/ui";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white">
-      <Container className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
-        <p className="font-[family-name:var(--font-heading)] text-sm font-semibold text-brand-700">
-          Kite <span className="text-brand-400">&amp;</span> Rail
+    <footer className="py-16">
+      <Container className="flex flex-col items-center gap-4 text-center">
+        <p className="font-[family-name:var(--font-heading)] text-sm tracking-wide text-[var(--color-text-muted)]">
+          Kite &amp; Rail
         </p>
-        <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Kite &amp; Rail. All rights
-          reserved.
+        <p className="text-xs text-[var(--color-text-muted)]/60">
+          &copy; {new Date().getFullYear()}
         </p>
       </Container>
     </footer>

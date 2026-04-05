@@ -1,6 +1,6 @@
-@import "tailwindcss";
+/* Shared UI base — do NOT import tailwindcss here, let each app do it */
 
-:root {
+@theme {
   --color-brand-50: #f0f9ff;
   --color-brand-100: #e0f2fe;
   --color-brand-200: #bae6fd;
@@ -12,6 +12,15 @@
   --color-brand-800: #075985;
   --color-brand-900: #0c4a6e;
   --color-brand-950: #082f49;
+}
+
+:root {
+  --color-surface: #ffffff;
+  --color-surface-raised: #f9fafb;
+  --color-surface-border: #e5e7eb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
 }
 
 *,

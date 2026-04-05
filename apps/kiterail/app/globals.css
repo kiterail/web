@@ -1,17 +1,42 @@
-@import "tailwindcss";
-@import "@kiterail/ui/globals.css";
+@import "tailwindcss" theme(static);
+@source "../../../packages/ui/src";
+
+@theme static {
+  /* Kite & Rail — dusk palette */
+  --color-brand-50: #fdf8f0;
+  --color-brand-100: #f5ead5;
+  --color-brand-200: #e6d5b0;
+  --color-brand-300: #d4b98a;
+  --color-brand-400: #c9a66d;
+  --color-brand-500: #b8944f;
+  --color-brand-600: #a07a3b;
+  --color-brand-700: #7d5f30;
+  --color-brand-800: #5e4725;
+  --color-brand-900: #3d2f1a;
+  --color-brand-950: #231b10;
+}
 
 :root {
-  /* Kite & Rail brand — warm indigo/violet */
-  --color-brand-50: #f5f3ff;
-  --color-brand-100: #ede9fe;
-  --color-brand-200: #ddd6fe;
-  --color-brand-300: #c4b5fd;
-  --color-brand-400: #a78bfa;
-  --color-brand-500: #8b5cf6;
-  --color-brand-600: #7c3aed;
-  --color-brand-700: #6d28d9;
-  --color-brand-800: #5b21b6;
-  --color-brand-900: #4c1d95;
-  --color-brand-950: #2e1065;
+  --color-surface: #141210;
+  --color-surface-raised: #1e1c1a;
+  --color-surface-border: #302c28;
+  --color-text-primary: #e0dbd4;
+  --color-text-secondary: #9c958c;
+  --color-text-muted: #605a52;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }

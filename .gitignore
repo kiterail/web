@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+dist/
+.turbo/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# Claude Code — local/personal config
+.claude/settings.json
+.claude/settings.local.json
+.claude/launch.json
+.mcp.json

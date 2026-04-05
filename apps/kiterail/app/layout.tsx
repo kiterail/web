@@ -17,7 +17,8 @@ const fontHeading = Newsreader({
 
 export const metadata: Metadata = {
   title: "Kite & Rail",
-  description: "A small studio making thoughtful things for the web.",
+  description:
+    "Kite & Rail is the technology studio of Amy Turrin. We build websites, platforms, games, and digital experiences.",
 };
 
 export default function RootLayout({

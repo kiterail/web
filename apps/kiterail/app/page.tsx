@@ -20,13 +20,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-[var(--color-surface)]/70" />
         <div className="relative z-10 px-6 text-center">
           <h1 className="font-[family-name:var(--font-heading)] text-4xl font-light leading-snug tracking-wide sm:text-5xl md:text-6xl lg:text-7xl">
-            Thoughtful things
+            Thoughtful things,
             <br />
-            <em className="text-brand-300">for the web.</em>
+            <em className="text-brand-300">built with care.</em>
           </h1>
           <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed tracking-wide text-[var(--color-text-secondary)]">
-            Kite &amp; Rail is a small studio that designs and builds websites,
-            platforms, and interactive experiences — with care.
+            Kite &amp; Rail is a small technology studio building websites,
+            platforms, games, and digital experiences.
           </p>
         </div>
       </section>
@@ -38,19 +38,22 @@ export default function Home() {
             About
           </p>
           <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Named after two birds.
+            Hi, I&apos;m Amy.
           </h2>
           <div className="mt-10 space-y-6 text-[var(--color-text-secondary)] leading-relaxed">
             <p>
-              The kite soars. The rail stays close to the earth. We like both —
-              ambition grounded in craft. Kite &amp; Rail is the studio of
-              Aspen, a developer and designer who builds things from scratch.
+              Kite &amp; Rail is the studio of Amy Turrin, a technical platform
+              leader with 15+ years building digital experiences at scale. By
+              day, I lead engineering teams and platform strategy at the
+              enterprise level. Here, I build the things I want to exist.
             </p>
             <p>
-              We work with modern tools — React, Next.js, TypeScript, Tailwind —
-              and care about the details that make something feel right: clean
-              code, considered design, and things that actually ship.
+              The name is a nod to Margaret Atwood&apos;s MaddAddam trilogy,
+              where creatures are named in pairs. A kite and a rail are two
+              birds with very different dispositions, and that felt right for a
+              studio that moves between big ambitions and quiet, careful craft.
             </p>
+            <p>Right now we&apos;re building the foundation. More to come.</p>
           </div>
         </Container>
       </Section>
@@ -73,7 +76,7 @@ export default function Home() {
             What we do
           </p>
           <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Design, code, launch.
+            Build, ship, evolve.
           </h2>
           <div className="mt-14 space-y-12">
             {services.map((service) => (
@@ -176,23 +179,23 @@ export default function Home() {
 
 const services = [
   {
-    title: "Websites & Web Apps",
+    title: "Websites & Platforms",
     description:
-      "Custom sites and applications built to last — fast, accessible, and designed with intention.",
+      "Modern web experiences built with React, Next.js, and TypeScript. From brochure sites to complex multi-brand ecosystems.",
   },
   {
-    title: "Brand & Design Systems",
+    title: "Creative Projects",
     description:
-      "Cohesive visual identity and component libraries that keep everything looking and feeling right.",
+      "Games, interactive tools, and community platforms. The things that are fun to make and worth using.",
   },
   {
-    title: "Interactive Experiences",
+    title: "Platform & Architecture Consulting",
     description:
-      "Games, creative tools, and platforms that go beyond the ordinary.",
+      "CMS strategy, cloud migration, platform modernization, and engineering governance for teams navigating complexity at scale.",
   },
   {
-    title: "Consulting",
+    title: "Compliance & Accessibility",
     description:
-      "Technical guidance on architecture, tooling, and strategy for teams building digital products.",
+      "GDPR, CCPA, COPPA, and WCAG expertise baked in from the start, not bolted on at the end.",
   },
 ];

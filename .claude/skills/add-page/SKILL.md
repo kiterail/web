@@ -19,6 +19,7 @@ Add a new page to an existing site in the monorepo.
 ### Step 1 — Read the site's existing layout
 
 Read these to match the site's patterns:
+
 - `apps/$0/app/layout.tsx` — root layout
 - `apps/$0/app/page.tsx` — home page for style reference
 - `apps/$0/app/components/header.tsx` — check nav links
@@ -27,6 +28,7 @@ Read these to match the site's patterns:
 ### Step 2 — Create the page
 
 Create `apps/$0/app/$1/page.tsx` with:
+
 - Appropriate metadata export (title, description)
 - Import and use Header + Footer from the site's components
 - Import shared components from `@kiterail/ui` (Container, Section, etc.)

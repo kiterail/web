@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button, Container } from "@kiterail/ui";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
+  { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,7 +19,7 @@ export function Header() {
           href="/"
           className="font-[family-name:var(--font-heading)] text-xl font-bold text-brand-700"
         >
-          Kiterail
+          Kite <span className="text-brand-400">&amp;</span> Rail
         </a>
 
         {/* Desktop nav */}
@@ -33,7 +33,9 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <Button size="sm">Get in Touch</Button>
+          <Button size="sm">
+            <a href="#contact">Start a Project</a>
+          </Button>
         </nav>
 
         {/* Mobile toggle */}
@@ -81,7 +83,7 @@ export function Header() {
               </a>
             ))}
             <Button size="sm" className="w-full">
-              Get in Touch
+              <a href="#contact">Start a Project</a>
             </Button>
           </Container>
         </div>

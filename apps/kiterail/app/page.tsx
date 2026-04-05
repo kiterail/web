@@ -8,38 +8,42 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <Section className="bg-gradient-to-br from-brand-50 to-white pt-32 sm:pt-40">
+      <Section className="bg-gradient-to-br from-brand-50 via-white to-brand-50/30 pt-32 sm:pt-40">
         <Container size="lg" className="text-center">
-          <h1 className="font-[family-name:var(--font-heading)] text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            Building the{" "}
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+            Creative Technology Studio
+          </p>
+          <h1 className="mt-4 font-[family-name:var(--font-heading)] text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+            Design. Code.{" "}
             <span className="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
-              Future
+              Launch.
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 sm:text-xl">
-            Kiterail creates modern digital experiences that help businesses
-            grow. From brochure sites to complex web applications, we build what
-            you need.
+            Kite &amp; Rail builds modern web experiences, interactive products,
+            and digital platforms — from first sketch to live deployment.
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Button size="lg">Get Started</Button>
+            <Button size="lg">
+              <a href="#contact">Start a Project</a>
+            </Button>
             <Button variant="secondary" size="lg">
-              Learn More
+              <a href="#projects">See Our Work</a>
             </Button>
           </div>
         </Container>
       </Section>
 
-      {/* Services */}
+      {/* What We Do */}
       <Section>
         <Container>
           <div className="text-center">
             <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
-              What We Do
+              What We Build
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-              We specialize in building scalable, maintainable web solutions
-              using modern technology.
+              We take ideas from concept to production using modern, scalable
+              technology.
             </p>
           </div>
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -58,18 +62,70 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* Projects */}
+      <Section id="projects" className="bg-gray-50">
+        <Container>
+          <div className="text-center">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+              Projects
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-gray-600">
+              Things we&apos;re building and shipping.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            {projects.map((project) => (
+              <Card
+                key={project.title}
+                className="flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{project.icon}</span>
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${project.statusColor}`}
+                    >
+                      {project.status}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl font-semibold">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-gray-600">{project.description}</p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-md bg-brand-50 px-2 py-1 text-xs font-medium text-brand-700"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* About */}
-      <Section className="bg-gray-50">
+      <Section id="about">
         <Container size="lg">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
-                Why Kiterail?
+                About Kite &amp; Rail
               </h2>
               <p className="mt-6 text-lg text-gray-600">
-                We believe in building things right the first time. Our approach
-                combines modern tooling with battle-tested architecture to
-                deliver products that scale with your business.
+                I&apos;m Aspen — a developer and designer who loves building
+                things from scratch. Kite &amp; Rail is my studio for turning
+                ideas into real, shipped products.
+              </p>
+              <p className="mt-4 text-lg text-gray-600">
+                Whether it&apos;s a branding site, a social platform, or an
+                interactive game, I care about clean code, thoughtful design,
+                and getting things live.
               </p>
               <ul className="mt-8 space-y-4">
                 {values.map((value) => (
@@ -82,20 +138,114 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-12 text-center text-white">
-              <p className="text-4xl font-bold">Ready to build?</p>
-              <p className="mt-4 text-brand-100">
-                Let&apos;s talk about your next project.
+            <div className="rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 p-12 text-center text-white">
+              <p className="font-[family-name:var(--font-heading)] text-3xl font-bold">
+                Let&apos;s build something together.
+              </p>
+              <p className="mt-4 text-brand-200">
+                Got a project idea? I&apos;d love to hear about it.
               </p>
               <Button
                 variant="secondary"
                 size="lg"
                 className="mt-8 border-white bg-white text-brand-700 hover:bg-brand-50"
               >
-                Contact Us
+                <a href="#contact">Get in Touch</a>
               </Button>
             </div>
           </div>
+        </Container>
+      </Section>
+
+      {/* Contact */}
+      <Section id="contact" className="bg-gray-50">
+        <Container size="md">
+          <div className="text-center">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+              Get in Touch
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-gray-600">
+              Have a project in mind, want a consultation, or just want to say
+              hello? Drop me a line.
+            </p>
+          </div>
+          <form
+            className="mt-12 space-y-6"
+            action="https://formspree.io/f/placeholder"
+            method="POST"
+          >
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-gray-700"
+              >
+                What are you looking for?
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              >
+                <option>New website or web app</option>
+                <option>Consultation</option>
+                <option>Collaboration / partnership</option>
+                <option>Just saying hello</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                required
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              />
+            </div>
+            <div className="text-center">
+              <Button type="submit" size="lg">
+                Send Message
+              </Button>
+            </div>
+          </form>
         </Container>
       </Section>
 
@@ -107,46 +257,85 @@ export default function Home() {
 const services = [
   {
     icon: "🌐",
-    title: "Web Development",
+    title: "Websites & Web Apps",
     description:
-      "Custom websites and web applications built with React, Next.js, and modern tooling.",
+      "Custom sites and applications built with React, Next.js, and TypeScript — fast, accessible, and built to last.",
   },
   {
     icon: "🎨",
-    title: "Design Systems",
+    title: "Brand & Design",
     description:
-      "Consistent, reusable component libraries that keep your brand cohesive across products.",
+      "Cohesive visual identity and component systems that keep your product looking sharp across every screen.",
   },
   {
-    icon: "⚡",
-    title: "Performance",
+    icon: "🎮",
+    title: "Interactive Experiences",
     description:
-      "Fast-loading, SEO-optimized sites that score high on Core Web Vitals.",
-  },
-  {
-    icon: "📱",
-    title: "Responsive Design",
-    description:
-      "Beautiful experiences on every device, from mobile to ultrawide.",
-  },
-  {
-    icon: "🔧",
-    title: "Maintenance & Support",
-    description:
-      "Ongoing support, updates, and monitoring to keep your sites running smoothly.",
+      "Games, creative tools, and interactive platforms that go beyond the standard web page.",
   },
   {
     icon: "🚀",
-    title: "Hosting & Deployment",
+    title: "Launch & Hosting",
     description:
-      "Affordable, scalable hosting with CI/CD pipelines for seamless updates.",
+      "Affordable, scalable deployment on modern platforms — from static sites to full-stack applications.",
+  },
+  {
+    icon: "🔧",
+    title: "Consulting",
+    description:
+      "Technical guidance on architecture, tooling, and strategy for teams building digital products.",
+  },
+  {
+    icon: "📱",
+    title: "Responsive & Accessible",
+    description:
+      "Every project is built mobile-first and accessible by default — no audience left behind.",
+  },
+];
+
+const projects = [
+  {
+    icon: "🦌",
+    title: "Fawnlight",
+    description:
+      "An upcoming interactive experience. More details coming soon.",
+    status: "Coming Soon",
+    statusColor: "bg-amber-100 text-amber-800",
+    tech: ["React", "Next.js", "TypeScript"],
+  },
+  {
+    icon: "📓",
+    title: "Journal Platform",
+    description:
+      "A modern take on personal blogging and community journaling — inspired by the golden age of LiveJournal.",
+    status: "In Development",
+    statusColor: "bg-blue-100 text-blue-800",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+  },
+  {
+    icon: "🏠",
+    title: "Kite & Rail",
+    description:
+      "This very site — our monorepo-powered hub with a shared design system across all projects.",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-800",
+    tech: ["Next.js", "Turborepo", "Tailwind", "Vercel"],
+  },
+  {
+    icon: "✨",
+    title: "Your Project?",
+    description:
+      "Got an idea you want to bring to life? Let's talk about making it real.",
+    status: "Open",
+    statusColor: "bg-brand-100 text-brand-800",
+    tech: ["Let's Chat"],
   },
 ];
 
 const values = [
-  "Modern tech stack — React, Next.js, Tailwind CSS, TypeScript",
-  "Shared design system across all projects for consistency",
-  "Performance-first approach with static generation where possible",
-  "Affordable hosting on platforms like Vercel and Cloudflare",
-  "Open, transparent development process",
+  "Full-stack development — React, Next.js, TypeScript, Tailwind",
+  "Shared design system across every project for consistency",
+  "Performance-first with static generation where possible",
+  "Affordable modern hosting on Vercel and Cloudflare",
+  "Transparent process from concept to launch",
 ];

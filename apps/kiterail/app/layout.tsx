@@ -14,9 +14,9 @@ const fontHeading = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Kiterail — Building the Future",
+  title: "Kite & Rail — Design, Code, Launch",
   description:
-    "Kiterail builds modern digital solutions that help businesses grow. Web development, design systems, and scalable technology.",
+    "Kite & Rail is a creative technology studio building modern web experiences, interactive products, and digital platforms.",
 };
 
 export default function RootLayout({

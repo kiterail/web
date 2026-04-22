@@ -1,91 +1,146 @@
 import Image from "next/image";
-import { Button, Container, Section } from "@kiterail/ui";
+import { Container, Section } from "@kiterail/ui";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import { siteConfig } from "./site.config";
 
 export default function Home() {
   return (
     <>
       <Header />
 
-      {/* Hero — full viewport, image with overlay */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <Image
-          src="/images/golden-forest.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-[var(--color-surface)]/70" />
-        <div className="relative z-10 px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] text-4xl font-light leading-snug tracking-wide sm:text-5xl md:text-6xl lg:text-7xl">
-            Thoughtful things,
-            <br />
-            <em className="text-brand-300">built with care.</em>
-          </h1>
-          <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed tracking-wide text-[var(--color-text-secondary)]">
-            Kite &amp; Rail is a small technology studio building websites,
-            platforms, games, and digital experiences.
-          </p>
+      {/* Hero — editorial split: type left, photo right */}
+      <section className="relative min-h-screen px-6 pt-40 pb-24 sm:px-12 lg:px-24">
+        {/* Subtle frond ornament */}
+        <div className="pointer-events-none absolute right-[12%] top-36 opacity-[0.12] select-none hidden lg:block">
+          <FrondSVG />
+        </div>
+
+        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_400px] lg:items-center">
+          {/* Type column */}
+          <div>
+            <p className="mb-10 flex items-center gap-3 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+              <span className="h-px w-5 bg-[var(--color-surface-border)] inline-block" />
+              Kite &amp; Rail · est. 2026
+            </p>
+            <h1 className="font-[family-name:var(--font-heading)] text-[clamp(56px,8vw,108px)] font-[400] leading-[0.95] tracking-[-0.02em] [font-variation-settings:'opsz'_144,'SOFT'_50,'WONK'_1]">
+              Thoughtful things,
+              <br />
+              <em className="italic text-brand-600">built with care.</em>
+            </h1>
+            <p className="mt-10 max-w-lg text-base leading-relaxed text-[var(--color-text-secondary)] sm:text-lg">
+              I&apos;m Amy Turrin — platform leader, engineer, builder.{" "}
+              Kite &amp; Rail is how I work: consulting, websites, and the occasional strange game.
+            </p>
+          </div>
+
+          {/* Photo column */}
+          <div className="relative hidden lg:block">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+              <Image
+                src="/images/forest-mist.jpg"
+                alt="Misty ridge, somewhere in the woods"
+                fill
+                priority
+                className="object-cover saturate-90 sepia-[8%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[oklch(96.5%_0.012_88)]/10 to-[oklch(86%_0.022_84)]/10" />
+            </div>
+            <p className="absolute -bottom-6 -left-8 border border-[var(--color-surface-border)] bg-[var(--color-surface)] px-4 py-3 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+              A small studio · Cape Elizabeth, ME
+            </p>
+          </div>
         </div>
       </section>
 
       {/* About */}
-      <Section id="about">
+      <Section id="about" className="bg-[var(--color-surface-raised)]">
         <Container size="sm">
-          <p className="text-[13px] uppercase tracking-[0.16em] text-brand-400">
-            About
+          <p className="mb-10 flex items-center gap-3 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+            <span className="text-brand-600">—</span>
+            <span className="h-px w-5 bg-[var(--color-surface-border)] inline-block" />
+            A short note
           </p>
-          <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Hi, I&apos;m Amy.
-          </h2>
-          <div className="mt-10 space-y-6 text-[var(--color-text-secondary)] leading-relaxed">
-            <p>
-              Kite &amp; Rail is my studio. I&apos;m Amy Turrin, a technical
-              platform leader with 15+ years building digital experiences at
-              scale. This is where I build the things I want to exist.
-            </p>
-            <p>
-              The name comes from two birds with very different dispositions — a
-              small nod to <span className="text-brand-300">Atwood</span>.
-              We&apos;re just getting started.
-            </p>
+          <p className="font-[family-name:var(--font-heading)] text-[clamp(24px,3vw,36px)] font-[400] leading-[1.3] tracking-[-0.01em] [font-variation-settings:'opsz'_144,'SOFT'_50,'WONK'_1]">
+            Hi, I&apos;m Amy.{" "}
+            <em className="italic text-brand-600">I ship things at scale.</em>{" "}
+            Fifteen years of platform leadership, digital architecture, and engineering team building
+            — most recently running a $5M digital portfolio across global consumer brands at
+            Kimberly-Clark. Now looking for the right opportunity and building freely, from the Maine coast.
+          </p>
+          <div className="mt-12 flex items-center gap-4">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-surface-border)] bg-[var(--color-surface)] font-[family-name:var(--font-heading)] text-lg italic text-brand-600">
+              A
+            </div>
+            <div>
+              <p className="font-[family-name:var(--font-heading)] text-base italic text-[var(--color-text-primary)]">
+                {siteConfig.owner.name}
+              </p>
+              <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                {siteConfig.owner.title} · {siteConfig.owner.location}
+              </p>
+            </div>
           </div>
         </Container>
       </Section>
 
-      {/* Image break */}
-      <div className="relative h-[40vh] sm:h-[50vh]">
+      {/* Image break — Portland Head Light */}
+      <div className="relative h-[480px]">
         <Image
-          src="/images/forest-mist.jpg"
-          alt=""
+          src="/images/maine-lighthouse.jpg"
+          alt="Portland Head Light, Cape Elizabeth, Maine"
           fill
-          className="object-cover"
+          className="object-cover brightness-[0.92] saturate-75 sepia-[6%]"
         />
-        <div className="absolute inset-0 bg-[var(--color-surface)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(96.5%_0.012_88)]/12 to-[oklch(96.5%_0.012_88)]/35" />
+        <p className="absolute bottom-8 right-16 font-[family-name:var(--font-heading)] text-lg italic text-white/90">
+          Portland Head Light · Cape Elizabeth, ME
+        </p>
       </div>
 
-      {/* What we do — minimal */}
-      <Section>
-        <Container size="sm">
-          <p className="text-[13px] uppercase tracking-[0.16em] text-brand-400">
-            What we&apos;re building
-          </p>
-          <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Making things that matter.
-          </h2>
-          <div className="mt-14 space-y-12">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="border-l border-[var(--color-surface-border)] pl-8"
-              >
-                <h3 className="text-sm tracking-wide text-[var(--color-text-primary)]">
-                  {service.title}
+      {/* On the bench */}
+      <Section id="bench">
+        <Container size="lg">
+          <div className="mb-16 grid gap-10 lg:grid-cols-[220px_1fr] lg:items-start">
+            <div>
+              <p className="mb-5 flex items-center gap-3 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+                <span className="text-brand-600">02</span>
+                <span className="h-px w-5 bg-[var(--color-surface-border)] inline-block" />
+                Currently
+              </p>
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(32px,4vw,44px)] font-[400] leading-[1.05] tracking-[-0.02em] [font-variation-settings:'opsz'_144,'SOFT'_50,'WONK'_1]">
+                On the{" "}
+                <em className="italic text-brand-600">bench</em>
+              </h2>
+            </div>
+            <p className="text-sm leading-relaxed text-[var(--color-text-secondary)] lg:pt-10 lg:max-w-lg">
+              A view of what&apos;s in progress at the moment.
+            </p>
+          </div>
+
+          {/* Cards grid */}
+          <div
+            className="grid divide-x divide-y divide-[var(--color-surface-border)] border border-[var(--color-surface-border)] sm:grid-cols-3"
+          >
+            {currentlyItems.map((item, i) => (
+              <div key={i} className="flex flex-col gap-4 p-8 sm:p-10">
+                <div className="flex items-center justify-between">
+                  <span className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                    №{String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex items-center gap-1.5 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.14em] text-brand-600">
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
+                    {item.status}
+                  </span>
+                </div>
+                <h3 className="font-[family-name:var(--font-heading)] text-[22px] font-[400] leading-[1.15] tracking-[-0.015em] [font-variation-settings:'opsz'_36,'SOFT'_50,'WONK'_1]">
+                  {item.title}
                 </h3>
-                <p className="mt-2 text-[var(--color-text-secondary)] leading-relaxed">
-                  {service.description}
+                <p className="flex-1 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                  {item.description}
+                </p>
+                <p className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                  {item.kind}
                 </p>
               </div>
             ))}
@@ -96,76 +151,32 @@ export default function Home() {
       {/* Contact */}
       <Section
         id="contact"
-        className="border-t border-[var(--color-surface-border)]"
+        className="bg-[var(--color-surface-raised)]"
       >
         <Container size="sm">
-          <p className="text-[13px] uppercase tracking-[0.16em] text-brand-400">
-            Contact
-          </p>
-          <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-snug sm:text-4xl">
-            Say hello.
-          </h2>
-          <p className="mt-6 text-[var(--color-text-secondary)]">
-            Have a project in mind, or just want to connect?
-          </p>
-          <form
-            className="mt-12 space-y-6"
-            action="https://formspree.io/f/placeholder"
-            method="POST"
-          >
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-[13px] uppercase tracking-[0.1em] text-[var(--color-text-muted)]"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="block w-full border-0 border-b border-[var(--color-surface-border)] bg-transparent px-0 py-3 text-sm text-[var(--color-text-primary)] transition-colors focus:border-brand-400 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-[13px] uppercase tracking-[0.1em] text-[var(--color-text-muted)]"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="block w-full border-0 border-b border-[var(--color-surface-border)] bg-transparent px-0 py-3 text-sm text-[var(--color-text-primary)] transition-colors focus:border-brand-400 focus:outline-none"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="mb-2 block text-[13px] uppercase tracking-[0.1em] text-[var(--color-text-muted)]"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="block w-full border-0 border-b border-[var(--color-surface-border)] bg-transparent px-0 py-3 text-sm text-[var(--color-text-primary)] transition-colors focus:border-brand-400 focus:outline-none"
-              />
-            </div>
-            <div className="pt-6">
-              <Button type="submit" size="lg">
-                Send Message
-              </Button>
-            </div>
-          </form>
+          <div className="text-center">
+            <p className="mb-8 flex items-center justify-center gap-3 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+              <span className="text-brand-600">03</span>
+              <span className="h-px w-5 bg-[var(--color-surface-border)] inline-block" />
+              Reach out
+            </p>
+            <h2 className="font-[family-name:var(--font-heading)] text-[clamp(48px,7vw,76px)] font-[400] leading-[1.0] tracking-[-0.02em] [font-variation-settings:'opsz'_144,'SOFT'_50,'WONK'_1]">
+              Say{" "}
+              <em className="italic text-brand-600">hello.</em>
+            </h2>
+            <p className="mx-auto mt-7 max-w-md text-base leading-relaxed text-[var(--color-text-secondary)]">
+              A project, a collaboration, or just want to trade notes?
+              I&apos;m based in Cape Elizabeth, Maine — but the work goes anywhere.
+            </p>
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              className="mt-12 inline-flex items-center gap-3 rounded-full border border-[var(--color-text-primary)] px-8 py-5 font-[family-name:var(--font-sans)] text-sm tracking-[0.06em] text-[var(--color-text-primary)] transition-all hover:bg-[var(--color-text-primary)] hover:text-[var(--color-surface)]"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
+              {siteConfig.contact.email}
+              <span className="text-base">→</span>
+            </a>
+          </div>
         </Container>
       </Section>
 
@@ -174,20 +185,57 @@ export default function Home() {
   );
 }
 
-const services = [
+// Minimal SVG frond ornament
+function FrondSVG() {
+  return (
+    <svg width="80" height="192" viewBox="0 0 40 96" fill="none">
+      <path d="M20 96 L20 4" stroke="currentColor" strokeWidth="1" className="text-brand-600" />
+      {Array.from({ length: 14 }).map((_, i) => {
+        const y = 8 + i * 6;
+        const len = Math.max(2, 16 - i * 0.9);
+        return (
+          <g key={i}>
+            <path
+              d={`M20 ${y} Q ${20 - len * 0.4} ${y - 1.5}, ${20 - len} ${y - 3}`}
+              stroke="currentColor"
+              strokeWidth="0.9"
+              strokeLinecap="round"
+              className="text-brand-600"
+            />
+            <path
+              d={`M20 ${y} Q ${20 + len * 0.4} ${y - 1.5}, ${20 + len} ${y - 3}`}
+              stroke="currentColor"
+              strokeWidth="0.9"
+              strokeLinecap="round"
+              className="text-brand-600"
+            />
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+const currentlyItems = [
   {
-    title: "Websites & Platforms",
+    status: "Open",
+    title: "Platform & engineering consulting",
     description:
-      "Modern web experiences from simple to complex. We pick the right tools for the job and build things that last.",
+      "Modern CMS management and composable architecture, platform modernization, engineering team leadership. I've led organizations of 50+ and portfolios up to $5M. Get in touch.",
+    kind: "Consulting · available",
   },
   {
-    title: "Creative Projects",
+    status: "In progress",
+    title: "Mindful task management",
     description:
-      "Games, interactive tools, and community platforms. The things that are fun to make and worth using.",
+      "A small app for staying on top of what's important. Accessible, thoughtful visuals, no distractions.",
+    kind: "App · personal",
   },
   {
-    title: "Consulting",
+    status: "Dreaming",
+    title: "A walk in the woods",
     description:
-      "Platform strategy, architecture, and engineering leadership for teams navigating complexity at scale.",
+      "Cozy and relaxing. Finding enjoyment in simple movement. Still mostly notes in a book.",
+    kind: "Games · wip",
   },
 ];

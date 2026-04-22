@@ -2,27 +2,35 @@
 @source "../../../packages/ui/src";
 
 @theme static {
-  /* Kite & Rail — dusk palette */
-  --color-brand-50: #fdf8f0;
-  --color-brand-100: #f5ead5;
-  --color-brand-200: #e6d5b0;
-  --color-brand-300: #d4b98a;
-  --color-brand-400: #c9a66d;
-  --color-brand-500: #b8944f;
-  --color-brand-600: #a07a3b;
-  --color-brand-700: #7d5f30;
-  --color-brand-800: #5e4725;
-  --color-brand-900: #3d2f1a;
-  --color-brand-950: #231b10;
+  /* Kite & Rail — Fern & Parchment palette */
+
+  /* Brand: fern green scale */
+  --color-brand-50:  oklch(97%   0.008 140);
+  --color-brand-100: oklch(93%   0.015 140);
+  --color-brand-200: oklch(86%   0.025 140);
+  --color-brand-300: oklch(76%   0.040 140);
+  --color-brand-400: oklch(65%   0.055 140);
+  --color-brand-500: oklch(55%   0.075 145);
+  --color-brand-600: oklch(48%   0.085 145);
+  --color-brand-700: oklch(40%   0.070 145);
+  --color-brand-800: oklch(32%   0.055 140);
+  --color-brand-900: oklch(24%   0.040 140);
+  --color-brand-950: oklch(16%   0.025 140);
+
+  /* Accent terracotta (secondary — for hover / interactive states) */
+  --color-accent: oklch(52% 0.100 55);
 }
 
 :root {
-  --color-surface: #141210;
-  --color-surface-raised: #1e1c1a;
-  --color-surface-border: #302c28;
-  --color-text-primary: #e0dbd4;
-  --color-text-secondary: #9c958c;
-  --color-text-muted: #605a52;
+  /* Surfaces — warm cream */
+  --color-surface:        oklch(96.5% 0.012 88);
+  --color-surface-raised: oklch(93.5% 0.018 86);
+  --color-surface-border: oklch(80%   0.020 100);
+
+  /* Text — forest ink */
+  --color-text-primary:   oklch(28% 0.025 140);
+  --color-text-secondary: oklch(42% 0.028 140);
+  --color-text-muted:     oklch(58% 0.020 130);
 }
 
 *,
